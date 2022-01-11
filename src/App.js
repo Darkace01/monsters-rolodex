@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./App.css";
 
 //Components
 import { CardList } from "./components/card-list/card-list.component";
@@ -9,6 +10,7 @@ class App extends Component {
 
     this.state = {
       monsters: [],
+      searchField: "",
     };
   }
 
@@ -20,11 +22,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CardList name="Kaz">
-          {this.state.monsters.map((monster) => (
-            <h1 key={monster.id}>{monster.name}</h1>
-          ))}
-        </CardList>
+        <input
+          type="search"
+          placeholder="Search Monsters"
+          onChange={(e) => this.setState({ searchField: e.target.value })}
+        />
+        <CardList monsters={this.state.monsters}></CardList>
       </div>
     );
   }
