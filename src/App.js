@@ -39,6 +39,7 @@ class App extends Component {
           handleChange={this.handleChange}
         />
         <CardList monsters={filteredMonsters}></CardList>
+        <p>Developed By <a href="https://kaz.com.ng">Kazeem Quadri</a></p>
       </div>
     );
   }
